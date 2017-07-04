@@ -36,6 +36,8 @@ function handleProgress() {
     progressBar.style.flexBasis = `${percent}%`;
 }
 
+
+
 function scrub(e) {
     console.log(e);
     const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
@@ -72,4 +74,9 @@ progress.addEventListener('mousedown', () => {
 });
 progress.addEventListener('mouseup', () => {
     mousedown = false;
+});
+window.addEventListener('keypress', (e) => {
+    if (e.charCode === 32) {
+        togglePlay();
+    }
 });
